@@ -4,17 +4,20 @@
       <input type="checkbox" [(ngModel)]="item.checked" />
       <input type="text" [(ngModel)]="item.taskName" />
 
-      <button>
+      <button (click)="deleteItem(i)">
         <img src="assets/Vector.svg" alt="" />
       </button>
     </li>
   </ul>
 
-  <div>
-    <img src="assets/tasks.png" alt="" *ngIf="!taskList.length" />
+  <div *ngIf="!taskList.length" class="loading">
+    <img src="assets/tasks.png" alt="" />
     <p>Sem tasks por enquanto, adicione uma nova!</p>
   </div>
 </div>
 
-<app-input-add-items></app-input-add-items>
-<app-button-delete-all *ngIf="!taskList.length"></app-button-delete-all>
+<app-input-add-items (emmitItem)="setEmmitedTaskItem($event)" ></app-input-add-items>
+<app-button-delete-all
+  *ngIf="taskList.length"
+  (click)="deleteAll()"
+></app-button-delete-all>
