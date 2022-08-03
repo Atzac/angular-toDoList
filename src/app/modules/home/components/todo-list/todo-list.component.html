@@ -6,6 +6,7 @@
         type="text"
         [(ngModel)]="item.taskName"
         [ngClass]="{ checked: item.checked }"
+        (keyup)="validation(item.taskName, i)"
       />
 
       <button (click)="deleteItem(i)">
