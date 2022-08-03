@@ -2,10 +2,26 @@
 
 .todo-container {
   width: 100%;
-  min-height: 300px;
+  min-height: 375px;
   background-color: $white;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
   margin-top: 20px;
+}
+
+div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  img {
+    width: 175px;
+  }
+  p {
+    font-size: 14px;
+    color: $secondary;
+    margin-top: 10px;
+  }
 }
 
 ul {
@@ -18,7 +34,7 @@ ul {
     margin-bottom: 10px;
 
     input {
-        accent-color: $purple;
+      accent-color: $purple;
       &[type="checkbox"] {
         width: 20px;
         height: 20px;
@@ -37,7 +53,7 @@ ul {
     }
   }
 
-  input:focus{
+  input:focus {
     box-shadow: 0 0 0 0;
     border: 0 none;
     outline: 0;
