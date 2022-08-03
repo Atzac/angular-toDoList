@@ -1,12 +1,12 @@
 import { TaskList } from "./../../model/task-list";
-import { Component, OnInit } from "@angular/core";
+import { Component, DoCheck } from "@angular/core";
 
 @Component({
   selector: "app-todo-list",
   templateUrl: "./todo-list.component.html",
   styleUrls: ["./todo-list.component.scss"],
 })
-export class TodoListComponent implements OnInit {
+export class TodoListComponent implements DoCheck {
   public taskList: Array<TaskList> = [
     { taskName: "teste 1", checked: false },
     { taskName: "teste 1", checked: false },
@@ -16,7 +16,11 @@ export class TodoListComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngDoCheck(): void {
+    this.taskList.sort(
+      (first, last) => Number(first.checked) - Number(last.checked)
+    );
+  }
 
   public deleteItem(idx: number) {
     this.taskList.splice(idx, 1);
