@@ -1,0 +1,29 @@
+@import "../../../../../dist/scss/variables.scss";
+
+:host {
+  display: flex;
+  justify-content: center;
+  margin-top: -20px;
+
+  input {
+    width: 80%;
+    border: none;
+    background-color: $purple;
+
+    font-size: 16px;
+    color: $white;
+    text-align: center;
+
+    padding: 10px;
+    box-sizing: border-box;
+
+    &::placeholder {
+      color: $purple-bg;
+    }
+    &:focus {
+      box-shadow: 0 0 0 0;
+      border: 0 none;
+      outline: 0;
+    }
+  }
+}

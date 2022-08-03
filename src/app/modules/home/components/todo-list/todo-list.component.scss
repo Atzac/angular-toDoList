@@ -37,6 +37,12 @@ ul {
     }
   }
 
+  input:focus{
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+  }
+
   button {
     width: 25px;
     height: 25px;
